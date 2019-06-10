@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'chat/:hall/:name', loadChildren: './chat/chat.module#ChatPageModule' },
+  { path: "", redirectTo: "login", pathMatch: "full" },
+  // { path: "home", loadChildren: "./pages/home/home.module#HomePageModule" },
+  { path: "chat", loadChildren: "./pages/chat/chat.module#ChatPageModule" },
+  { path: "chat/:id", loadChildren: "./pages/chat/chat.module#ChatPageModule" },
+  { path: "login", loadChildren: "./pages/login/login.module#LoginPageModule" }
 ];
 
 @NgModule({
@@ -13,4 +15,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
