@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bate-Papo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-item>
+    <ion-label>Sala</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="hall">
+      <ion-select-option  *ngFor="let sala of salas">{{sala.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-input type="text" id="nome" [(ngModel)]="name" placeholder="digite seu nome"></ion-input>
+
+  <ion-button expand="full" fill="outline" color="medium" 
+    (click)="pushPage()">Entrar</ion-button>
+</ion-content>

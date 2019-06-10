@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{hall}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-input type="text" id="nome" [(ngModel)]="message" placeholder="Digite sua mensagem"></ion-input>
+    <ion-button expand="full" color="medium" 
+    (click)="pushMessage()">Enviar Mensagem</ion-button>
+    
+    <ion-item *ngIf="flag > 0">
+        <ion-card *ngFor="let men of mensagens" expand="full">
+            <ion-card-title>{{men.nome}}</ion-card-title>
+            <ion-card-content>{{men.content}}</ion-card-content>
+        </ion-card>
+    </ion-item>
+
+</ion-content>
